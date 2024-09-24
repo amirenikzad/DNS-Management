@@ -2,13 +2,15 @@
 
 A simple Flask web app to manage DNS entries using MongoDB. The app allows users to register domains, search for existing entries, count total DNS entries, and perform CRUD operations.
 
-##Main Page
+## Main Page
 This is the main page of the DNS Management Web Application, where users can input domain names and IP addresses for registration or searching.
 ![Screenshot 2024-09-24 162110](https://github.com/user-attachments/assets/8fa37891-ac8e-4d5e-a820-142c021d0e6a)
-##Edit DNS Entry
+
+## Edit DNS Entry
 This page is used to modify an existing DNS entry. Users can update the domain name and its IP address.
 ![Screenshot 2024-09-24 163146](https://github.com/user-attachments/assets/b858ef73-481a-4d2e-9bc3-18ab72ccc375)
-##What you see in MongoDB
+
+## What you see in MongoDB
 ![Screenshot 2024-09-24 162225](https://github.com/user-attachments/assets/afe0c12a-4edf-4a3b-921e-d1ee0b4b8589)
 
 ## Features
