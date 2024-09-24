@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Entries</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            color: black;
+        }
+
+        th {
+            background-color: #a72855;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        button {
+            background-color: #a72855;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 5px 10px;
+        }
+
+        button:hover {
+            background-color: #882121;
+        }
+    </style>
+</head>
+<body>
+    <nav> <a href="/">crud</a></nav>
+    <h1>DNS Entries</h1>
+
+    <table>
+            <tr>
+                <th>id</th>
+                <th>Domain</th>
+                <th>IP Address</th>
+                <th>Actions</th>  
+            </tr>
+            {% for entry in dns_entries %}
+                <tr>
+                    <td>{{ entry.id }}</td>
+                    <td>{{ entry.domain }}</td>
+                    <td>{{ entry.ip }}</td>
+                                        
+                    <td>
+                        <!-- <a href="/edit/{{ entry.id }}">Edit</a> -->
+                        <form action="/edit/{{ entry.id }}" method="get">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form action="/delete/{{ entry.id }}" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+    </table>
+</body>
+</html>

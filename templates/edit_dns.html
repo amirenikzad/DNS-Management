@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit DNS Entry</title>
+</head>
+<body>
+    <h1>Edit DNS Entry</h1>
+    <form action="/edit/{{ entry_id }}" method="post">
+        <label for="domain">Domain:</label><br>
+        <input type="text" id="domain" name="domain" value="{{ entry.domain }}"><br>
+        <label for="ip">IP Address:</label><br>
+        <input type="text" id="ip" name="ip" value="{{ entry.ip }}"><br><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

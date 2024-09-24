@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Domain Lookup</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        h1 {
+            color: #333;
+        }
+    
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        label {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+    
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            background-color: #a72855;
+            color: #fff;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #882121;
+        }
+    </style>
+</head>
+
+<body>
+    <nav> <a href="/crud">show/delete page</a></nav>
+    
+    <h1>DNS Lookup</h1>
+    <div class="form1">
+        <form action="/register" method="post" action="{{ url_for('domain') }}">
+            <label for="domain">Domain</label>
+            <input type="text" id="domain" name="domain" required>
+            
+    
+            <label for="ip">IP</label>
+            <input type="text" id="ip" name="ip" required>
+            
+            <input type="submit" value="Make Domain">
+            <p>{{create_result}}</p>
+        </form>
+    </div>
+    <h1>Search for a domain</h1>
+    <div class="form2">
+        <form  action="/search" method="post" action="{{ url_for('domain') }}">
+            <input type="text" name="search" required>
+    
+    
+            <input type="submit" value="Domain search">
+            <p>{{result}}</p>
+            </form>
+    </div>
+    
+    
+</body>
+</html>
